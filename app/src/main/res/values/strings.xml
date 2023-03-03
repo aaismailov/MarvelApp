@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MarvelApp</string>
+    <string name="basic_error">Произошла ошибка</string>
+</resources>

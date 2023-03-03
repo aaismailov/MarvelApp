@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nickname_text">Никнейм:</string>
+    <string name="nickname_field">Поле</string>
+    <string name="edit">РЕДАКТИРОВАТЬ</string>
+</resources>

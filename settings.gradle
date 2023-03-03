@@ -1,0 +1,33 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "project"
+include ':app'
+include ':core'
+include ':core-di'
+include ':core-local'
+include ':core-network'
+include ':feature-main'
+include ':feature-main-api'
+include ':feature-home'
+include ':feature-home-api'
+include ':feature-profile'
+include ':feature-profile-api'
+include ':core-ui'
+include ':feature-details'
+include ':feature-details-api'
+include ':feature-entry'
+include ':feature-entry-api'
+include ':feature-favorite'
+include ':feature-favorite-api'

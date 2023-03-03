@@ -1,0 +1,89 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.4.10'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    namespace 'com.example.project'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.project"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation project(":core")
+    implementation project(":core-local")
+    implementation project(":core-network")
+    implementation project(':core-di')
+    implementation project(':feature-home')
+    implementation project(':feature-home-api')
+    implementation project(':feature-main')
+    implementation project(':feature-main-api')
+    implementation project(':feature-profile')
+    implementation project(':feature-profile-api')
+    implementation project(':feature-details')
+    implementation project(':feature-details-api')
+    implementation project(':feature-entry')
+    implementation project(':feature-entry-api')
+    implementation project(':feature-favorite')
+    implementation project(':feature-favorite-api')
+
+    implementation Deps.core
+    implementation Deps.appCompat
+    implementation Deps.androidMaterial
+    implementation Deps.constraintLayout
+    testImplementation TestImplementation.junit
+    androidTestImplementation AndroidTestImplementation.junit
+    androidTestImplementation AndroidTestImplementation.espresso
+
+    implementation ViewModelDelegate.activityKtx
+    implementation CoroutinesLifecycleScope.lifecycleViewModel
+
+    // Retrofit
+    implementation Retrofit.loggingInterceptor
+    implementation Retrofit.kotlinCoroutinesAdapter
+
+    // Dagger
+    implementation Dagger.dagger
+    implementation Dagger.daggerAndroid
+    implementation Dagger.daggerAndroidSupport
+    kapt Dagger.daggerAndroidProcessor
+    kapt Dagger.daggerCompiler
+
+    // Room
+    implementation Room.roomRuntime
+    implementation Room.room
+    kapt Room.roomCompiler
+
+    // Navigation
+    implementation Navigation.navigationFragmentKtx
+}

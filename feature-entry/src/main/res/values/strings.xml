@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="entry_title">Вход</string>
+    <string name="nickname">Никнейм</string>
+    <string name="entry_btn">ВОЙТИ</string>
+</resources>
